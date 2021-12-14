@@ -23,3 +23,25 @@ for x in inputlist:
 
 print("increases: " + str(increases))
 print("decreases: " + str(decreases))
+
+#part 2:
+f = open('01_input.txt')
+l = []
+groupsum = []
+increasementingroups = 0
+
+for i in f:
+    l.append(int(i))
+
+possiblegroupsofthree = len(l) - 2
+
+for i in range(0,possiblegroupsofthree):
+    sumofgroups = l[i] + l[i+1] + l[i+2]
+    groupsum.append(sumofgroups)
+
+for i in range(1,len(groupsum)-1):
+    if groupsum[i] - groupsum[i+1] > 0:
+        increasementingroups += 1
+
+print("increasements in groups: " + str(increasementingroups))
+
