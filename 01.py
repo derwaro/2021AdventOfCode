@@ -39,9 +39,10 @@ for i in range(0,possiblegroupsofthree):
     sumofgroups = l[i] + l[i+1] + l[i+2]
     groupsum.append(sumofgroups)
 
-for i in range(1,len(groupsum)-1):
-    if groupsum[i] - groupsum[i+1] > 0:
+for i in range(0,len(groupsum)-1):
+    if groupsum[i] < groupsum[i+1]:
         increasementingroups += 1
+
 
 print("increasements in groups: " + str(increasementingroups))
 
