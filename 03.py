@@ -25,7 +25,24 @@ print(int(gamma, 2)*int(epsilon, 2))
 # part 2
 def oxy(binlist):
     result = ""
-    for i in range(0, len(binlist[0]-1)):
+    a = ""
+    j = 0
+    while len(result) > 1 or len(result) == 0:
+        for i in range(j, len(binlist[0]-1)):
+            ma = max(set(binlist), key = binlist.count)
+            mi = min(set(binlist), key = binlist.count)
+            if ma == mi:
+                a = "1"
+            else:
+                a = ma
+            for entry in binlist if entry[j] == a:
+                result.append(entry)
+                j += 1
+            
+        print(result)
+
+
+
         while len(result) > 1:
             a = max(set(i), key = i.count) #get maximum occurence of number
 
